@@ -5,7 +5,9 @@ html = file_name + ".html"
 css = file_name + ".css"
 javascript = file_name + ".js"
 
-boiler = ["<!DOCTYPE html>\n", "<html lang=\"en\">\n", "    <head>\n", "        <meta charset=\"utf-8\">\n", "        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n", "        <title></title>\n", "        <meta name=\"description\" content=\"\">\n", "        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n", f"        <link rel=\"stylesheet\" href=\"{css}\">\n", "    </head>\n", "    <body>\n",  f"        <script src=\"{javascript}\" async defer></script>\n", "    </body>\n", "</html>\n"]
+name = file_name.replace("_", " ")
+
+boiler = ["<!DOCTYPE html>\n", "<html lang=\"en\">\n", "    <head>\n", "        <meta charset=\"utf-8\">\n", "        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n", f"        <title>{name}</title>\n", "        <meta name=\"description\" content=\"\">\n", "        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n", f"        <link rel=\"stylesheet\" href=\"{css}\">\n", "    </head>\n", "    <body>\n",  f"        <script src=\"{javascript}\" async defer></script>\n", "    </body>\n", "</html>\n"]
 
 with open(html, "w") as html_file:
     html_file.writelines(boiler)
